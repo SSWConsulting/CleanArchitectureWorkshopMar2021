@@ -16,6 +16,6 @@ namespace CaWorkshop.WebUI.Data
 
         public DbSet<TodoList> TodoLists { get; set; }
 
-        public DbSet<Todolist> TodoItems { get; set; }
+        public DbSet<TodoItem> TodoItems { get; set; }
     }
 }

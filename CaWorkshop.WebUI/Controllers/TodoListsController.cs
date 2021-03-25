@@ -30,7 +30,7 @@ namespace CaWorkshop.WebUI.Controllers
                     {
                         Id = l.Id,
                         Title = l.Title,
-                        Items = l.Items.Select(i => new Todolist
+                        Items = l.Items.Select(i => new TodoItem
                         {
                             Id = i.Id,
                             ListId = i.ListId,

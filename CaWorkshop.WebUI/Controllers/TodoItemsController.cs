@@ -24,7 +24,7 @@ namespace CaWorkshop.WebUI.Controllers
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, Todolist todoItem)
+        public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
         {
             if (id != todoItem.Id)
             {
@@ -55,7 +55,7 @@ namespace CaWorkshop.WebUI.Controllers
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<long>> PostTodoItem(Todolist todoItem)
+        public async Task<ActionResult<long>> PostTodoItem(TodoItem todoItem)
         {
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();
