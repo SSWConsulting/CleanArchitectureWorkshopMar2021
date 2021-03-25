@@ -10,6 +10,6 @@ namespace CaWorkshop.WebUI.Controllers
     {
         private ISender _mediator;
 
-        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetService<ISender>();
+        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
     }
 }

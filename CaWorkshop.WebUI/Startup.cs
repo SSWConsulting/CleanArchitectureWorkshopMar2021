@@ -20,6 +20,7 @@ namespace CaWorkshop.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructureServices(Configuration);
+            services.AddApplicationServices();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
