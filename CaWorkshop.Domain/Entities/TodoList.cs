@@ -10,7 +10,6 @@ namespace CaWorkshop.Domain.Entities
 
         public string Colour { get; set; }
 
-        public IList<TodoItem> Items { get; set; }
-            = new List<TodoItem>();
+        public IList<TodoItem> Items { get; set; } = new List<TodoItem>();
     }
 }

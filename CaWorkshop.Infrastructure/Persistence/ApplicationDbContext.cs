@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Domain.Entities;
 using CaWorkshop.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
@@ -8,7 +9,7 @@ using Microsoft.Extensions.Options;
 
 namespace CaWorkshop.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext(
             DbContextOptions options,

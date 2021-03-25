@@ -21,7 +21,8 @@ namespace CaWorkshop.Infrastructure.Persistence
                 }
             };
 
-            context.TodoLists.Add(list);
+            context.Add(list);
+
             context.SaveChanges();
         }
     }
