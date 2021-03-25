@@ -8,12 +8,8 @@ namespace CaWorkshop.WebUI.Data
     {
         public static void Initialise(ApplicationDbContext context)
         {
+            context.Database.EnsureDeleted();
             context.Database.Migrate();
-
-            if (context.TodoLists.Any())
-            {
-                return;
-            }
 
             var list = new TodoList
             {

@@ -19,9 +19,14 @@ namespace CaWorkshop.WebUI
 
                 try
                 {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    var env = services.GetRequiredService<IWebHostEnvironment>();
 
-                    ApplicationDbContextInitialiser.Initialise(context);
+                    if (env.IsDevelopment())
+                    {
+                        var context = services.GetRequiredService<ApplicationDbContext>();
+
+                        ApplicationDbContextInitialiser.Initialise(context);
+                    }
                 }
                 catch (Exception ex)
                 {
