@@ -1,5 +1,5 @@
 ﻿using System;
-using CaWorkshop.WebUI.Data;
+using CaWorkshop.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
