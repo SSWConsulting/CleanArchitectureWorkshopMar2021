@@ -30,7 +30,7 @@ namespace CaWorkshop.WebUI.Controllers
                     {
                         Id = l.Id,
                         Title = l.Title,
-                        Items = l.Items.Select(i => new TodoItem
+                        Items = l.Items.Select(i => new Todolist
                         {
                             Id = i.Id,
                             ListId = i.ListId,
@@ -90,12 +90,12 @@ namespace CaWorkshop.WebUI.Controllers
         // POST: api/TodoLists
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<long>> PostTodoItem(TodoItem todoItem)
+        public async Task<ActionResult<int>> PostTodoItem(TodoList todoList)
         {
-            _context.TodoItems.Add(todoItem);
+            _context.TodoLists.Add(todoList);
             await _context.SaveChangesAsync();
 
-            return todoItem.Id;
+            return todoList.Id;
         }
 
         // DELETE: api/TodoLists/5

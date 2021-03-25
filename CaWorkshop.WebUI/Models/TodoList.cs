@@ -13,7 +13,7 @@ namespace CaWorkshop.WebUI.Models
 
         public string Colour { get; set; }
 
-        public IList<TodoItem> Items { get; set; }
-            = new List<TodoItem>();
+        public IList<Todolist> Items { get; set; }
+            = new List<Todolist>();
     }
 }

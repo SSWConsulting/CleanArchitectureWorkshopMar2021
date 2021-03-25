@@ -16,10 +16,10 @@ namespace CaWorkshop.WebUI.Data
                 Title = "Todo List",
                 Items =
                 {
-                    new TodoItem { Title = "Make a todo list" },
-                    new TodoItem { Title = "Check off the first item" },
-                    new TodoItem { Title = "Realise you've already done two things on the list!"},
-                    new TodoItem { Title = "Reward yourself with a nice, long nap" },
+                    new Todolist { Title = "Make a todo list" },
+                    new Todolist { Title = "Check off the first item" },
+                    new Todolist { Title = "Realise you've already done two things on the list!"},
+                    new Todolist { Title = "Reward yourself with a nice, long nap" },
                 }
             };
 
