@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AutoMapper;
 using CaWorkshop.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
@@ -13,6 +14,8 @@ namespace CaWorkshop.Infrastructure
             this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddTransient(typeof(IRequestPreProcessor<>), typeof(ValidationBehavior<>));
 
