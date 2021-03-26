@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using CaWorkshop.Application.Common.Interfaces;
+using CaWorkshop.Infrastructure.Persistence;
 using CaWorkshop.WebUI.Filters;
 using CaWorkshop.WebUI.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,17 @@ namespace CaWorkshop.WebUI
         public static IServiceCollection AddWebUIServices(this IServiceCollection services)
         {
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddHealthChecks()
+                .AddDbContextCheck<ApplicationDbContext>()
+                .AddSmtpHealthCheck(options =>
+                {
+                    options.Host = "localhost";
+                    options.Port = 25;
+                });
+
+            services.AddHealthChecksUI()
+                .AddInMemoryStorage();
 
             services.AddHttpContextAccessor();
 

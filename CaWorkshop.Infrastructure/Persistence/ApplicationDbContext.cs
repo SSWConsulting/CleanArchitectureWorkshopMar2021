@@ -16,7 +16,7 @@ namespace CaWorkshop.Infrastructure.Persistence
         private readonly AuditEntitiesSaveChangesInterceptor _auditEntitiesSaveChangesInterceptor;
 
         public ApplicationDbContext(
-                DbContextOptions options,
+                DbContextOptions<ApplicationDbContext> options,
                 IOptions<OperationalStoreOptions> operationalStoreOptions,
                 ICurrentUserService currentUserService)
             : base(options, operationalStoreOptions)
