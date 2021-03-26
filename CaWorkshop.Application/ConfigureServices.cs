@@ -15,6 +15,8 @@ namespace CaWorkshop.Application
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehaviour<,>));
+
             services.AddTransient(typeof(IRequestPreProcessor<>), typeof(ValidationBehavior<>));
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

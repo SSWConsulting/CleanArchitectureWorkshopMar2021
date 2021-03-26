@@ -14,6 +14,8 @@ namespace CaWorkshop.Infrastructure
             this IServiceCollection services,
             IConfiguration configuration)
         {
+            services.AddScoped<IIdentityService, IdentityService>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
