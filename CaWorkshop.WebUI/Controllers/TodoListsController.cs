@@ -3,6 +3,7 @@ using CaWorkshop.Application.TodoLists.Commands.CreateTodoList;
 using CaWorkshop.Application.TodoLists.Commands.DeleteTodoList;
 using CaWorkshop.Application.TodoLists.Commands.UpdateTodoList;
 using CaWorkshop.Application.TodoLists.Queries.GetTodoLists;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CaWorkshop.WebUI.Controllers
@@ -41,6 +42,8 @@ namespace CaWorkshop.WebUI.Controllers
 
         // DELETE: api/TodoLists/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteTodoList(int id)
         {
             await Mediator.Send(new DeleteTodoListCommand { Id = id });
