@@ -28,6 +28,7 @@ namespace CaWorkshop.Application.TodoLists.Commands.CreateTodoList
                 .MaximumLength(240)
                 .NotEmpty()
                 .MustAsync(BeUniqueTitle)
+                    .WithErrorCode("IsUniqueTitle")
                     .WithMessage(command => $"The 'Title' ({command.Title}) must be unique.");
         }
 

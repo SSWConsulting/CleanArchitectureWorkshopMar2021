@@ -1,4 +1,5 @@
-﻿using CaWorkshop.Application.Common.Mappings;
+﻿using AutoMapper;
+using CaWorkshop.Application.Common.Mappings;
 using CaWorkshop.Domain.Entities;
 using System.Collections.Generic;
 

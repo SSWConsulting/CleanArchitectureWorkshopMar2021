@@ -7,7 +7,10 @@ namespace CaWorkshop.Infrastructure.Persistence
     {
         public static void Initialise(ApplicationDbContext context)
         {
-            context.Database.Migrate();
+            if(context.Database.IsRelational())
+            {
+                context.Database.Migrate();
+            }
 
             var list = new TodoList
             {
