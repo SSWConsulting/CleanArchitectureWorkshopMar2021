@@ -6,7 +6,7 @@ using MediatR;
 using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CaWorkshop.Infrastructure
+namespace CaWorkshop.Application
 {
     public static class ConfigureServices
     {
@@ -15,9 +15,9 @@ namespace CaWorkshop.Infrastructure
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
             services.AddTransient(typeof(IRequestPreProcessor<>), typeof(ValidationBehavior<>));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 

@@ -38,7 +38,7 @@ namespace CaWorkshop.Application.TodoItems.Commands.UpdateTodoItem
         {
             var entity = await _context.TodoItems.FindAsync(request.Id);
 
-            Guard.Against.NotFound(nameof(TodoItem), request.Id);
+            Guard.Against.NotFound(entity, request.Id);
 
             entity.ListId = request.ListId;
             entity.Title = request.Title;

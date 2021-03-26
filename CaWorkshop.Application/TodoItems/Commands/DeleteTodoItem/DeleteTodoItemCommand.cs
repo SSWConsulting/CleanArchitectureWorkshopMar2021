@@ -28,7 +28,7 @@ namespace CaWorkshop.Application.TodoItems.Commands.DeleteTodoItem
         {
             var entity = await _context.TodoItems.FindAsync(request.Id);
 
-            Guard.Against.NotFound(nameof(TodoItem), request.Id);
+            Guard.Against.NotFound(entity, request.Id);
 
             _context.TodoItems.Remove(entity);
 

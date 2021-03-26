@@ -25,7 +25,7 @@ namespace CaWorkshop.Application.TodoLists.Commands.DeleteTodoList
         {
             var entity = await _context.TodoLists.FindAsync(new object[] { request.Id }, cancellationToken);
 
-            Guard.Against.NotFound(nameof(TodoList), request.Id);
+            Guard.Against.NotFound(entity, request.Id);
 
             _context.TodoLists.Remove(entity);
 
